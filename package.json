@@ -1,0 +1,46 @@
+{
+  "name": "oligo-toolkit",
+  "version": "1.0.0",
+  "description": "A toolkit for calculating some basic properties and transformations of oligonucleotides.",
+  "main": "dist/otk",
+  "types": "dist/otk",
+  "scripts": {
+    "pretest": "tsc",
+    "build": "webpack",
+    "test": "mocha dist/test/*.js",
+    "watch": "mocha-typescript-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oelrich/oligo-toolkit.git"
+  },
+  "keywords": [
+    "oligo",
+    "oligonucleotide",
+    "meltingpoint",
+    "gc-content",
+    "dna",
+    "rna",
+    "iupac"
+  ],
+  "author": "Johan Oelrich <johan@oelrich.se>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/oelrich/oligo-toolkit/issues"
+  },
+  "homepage": "https://github.com/oelrich/oligo-toolkit#readme",
+  "devDependencies": {
+    "@types/chai": "^4.0.1",
+    "@types/mocha": "^2.2.41",
+    "awesome-typescript-loader": "^3.2.1",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2",
+    "mocha-typescript": "^1.1.7",
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.4.1"
+  },
+  "dependencies": {
+    "@types/d3": "^4.9.0",
+    "d3": "^4.9.1"
+  }
+}
