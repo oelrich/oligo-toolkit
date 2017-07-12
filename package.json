@@ -24,7 +24,7 @@
     "iupac"
   ],
   "author": "Johan Oelrich <johan@oelrich.se>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/oelrich/oligo-toolkit/issues"
   },
