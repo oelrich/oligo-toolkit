@@ -1,8 +1,8 @@
 import { suite, test, timeout, slow } from "mocha-typescript";
 import { assert, expect } from "chai";
-import * as statistics from "../components/statistics";
+import * as statistics from "../components/stats";
 
-@suite("Statistics", slow(1000), timeout(2000))
+@suite("Statistics - Expansion", slow(1000), timeout(2000))
 class SuiteExpansionSize {
     @test "TAN expands to 4 sequences"() {
       expect(statistics.expanded_size("TAN")).to.equal(4);
