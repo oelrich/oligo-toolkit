@@ -8,9 +8,21 @@ class SuiteMisc {
       var o = new otk("ATTAC");
       expect(o.size()).to.equal(1);
     }
-    @test "Domain Size for NATTAC"() {
+    @test "Domain Size for NATTAC should be 4"() {
       var o = new otk("NATTAC");
       expect(o.size()).to.equal(4);
+    }
+    @test "Domain Size for N{8} should be 4^8"() {
+      var o = new otk("NNNNNNNN");
+      expect(o.size()).to.equal(Math.pow(4,8));
+    }
+    @test "Domain Size for N{32} should be 4^32"() {
+      var o = new otk("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
+      expect(o.size()).to.equal(Math.pow(4,32));
+    }
+    @test "Domain Size for N{128} should be 4^128"() {
+      var o = new otk("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN");
+      expect(o.size()).to.equal(Math.pow(4,128));
     }
 }
 
