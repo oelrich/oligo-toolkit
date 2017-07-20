@@ -1,4 +1,18 @@
-export function basic(sequence: string) {
+export enum TmType { BASIC, NN }
+
+export function Tm(sequence: string, type: TmType) {
+  switch (type) {
+    case TmType.BASIC:
+      return basic(sequence);
+    case TmType.NN:
+      return nn(sequence);
+    default:
+      break;
+  }
+  throw new Error("No such TmType.")
+}
+
+function basic(sequence: string) {
   var A = (sequence.match(/[A]/g) || []).length;
   var T = (sequence.match(/[T]/g) || []).length;
   var G = (sequence.match(/[G]/g) || []).length;
@@ -15,7 +29,7 @@ export function basic(sequence: string) {
   return Tm;
 };
 
-export function nn(sequence: string) {
+function nn(sequence: string) {
   if(sequence.length == 0) {
     throw new Error("Tm:NN - Bad sequence");
   }
