@@ -2,7 +2,7 @@ import { suite, test, timeout, slow } from "mocha-typescript";
 import { assert, expect } from "chai";
 import * as transform from "../components/transform";
 
-@suite("Transform - Complement", slow(1000), timeout(2000))
+@suite("Transform (Complement)", slow(1000), timeout(2000))
 class SuiteComplement {
     @test "N should be N"() {
       expect(transform.complement('N')).to.equal('N');
@@ -14,7 +14,7 @@ class SuiteComplement {
       expect(transform.complement('TAC')).to.equal('ATG');
     }
 }
-@suite("Transform - Reverse", slow(1000), timeout(2000))
+@suite("Transform (Reverse)", slow(1000), timeout(2000))
 class SuiteReverse {
     @test "N should be N"() {
       expect(transform.reverse('N')).to.equal('N');
@@ -26,7 +26,7 @@ class SuiteReverse {
       expect(transform.reverse('TAC')).to.equal('CAT');
     }
 }
-@suite("Transform - Reverse complement", slow(1000), timeout(2000))
+@suite("Transform (Reverse complement)", slow(1000), timeout(2000))
 class SuiteReverseComplement {
     @test "N should be N"() {
       expect(transform.reverse_complement('N')).to.equal('N');

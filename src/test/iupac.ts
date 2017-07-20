@@ -2,7 +2,7 @@ import { suite, test, timeout, slow } from "mocha-typescript";
 import { assert, expect } from "chai";
 import * as IUPAC from "../components/iupac";
 
-@suite("IUPAC - Complement", slow(1000), timeout(2000))
+@suite("IUPAC (Complement)", slow(1000), timeout(2000))
 class SuiteComplement {
     @test "N should be N"() {
       expect(IUPAC.complement('N')).to.equal('N');
@@ -15,7 +15,7 @@ class SuiteComplement {
     }
 }
 
-@suite("IUPAC - Expand", slow(1000), timeout(2000))
+@suite("IUPAC (Expand)", slow(1000), timeout(2000))
 class SuiteExpand {
     @test "N should contain only A, C, G & T"() {
       expect(IUPAC.expand('N')).to.include('A');
