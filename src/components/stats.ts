@@ -9,24 +9,29 @@ interface DataPoint {
   tm: number;
 }
 
-export enum StatType { GC, TM }
-
 export interface Stats {
-  type: StatType;
-  name: string;
-  deviation: number;
-  mean: number;
-  median: number;
+  gc:Statistics;
+  tm:Statistics;
 }
 
-export function get_stats(sequence: string, sample_size: number): Stats[] {
-  return [];
+export interface Statistics {
+  deviation?: number;
+  mean?: number;
+  median?: number;
+  exact?:number;
 }
 
-export function get_full_stats(sequence: string): Stats[] {
-  return [];
+export function get_stats(sequence: string, sample_size: number, tmtype:meltingpoint.TmType): Stats {
+  return {gc:{exact:0},tm:{exact:0}};
 }
 
+export function get_full_stats(sequence: string, tmtype:meltingpoint.TmType): Stats {
+  return {gc:{exact:0},tm:{exact:0}};
+}
+
+export function get_single_stats(sequence: string, tmtype:meltingpoint.TmType): Stats {
+  return {gc:{exact:gcr(sequence)},tm:{exact:meltingpoint.Tm(sequence, tmtype)}};
+}
 
 export function expanded_size(sequence: string) {
   return sequence
