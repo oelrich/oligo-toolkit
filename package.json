@@ -1,6 +1,6 @@
 {
   "name": "oligo-toolkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A toolkit for calculating some basic properties and transformations of oligonucleotides.",
   "main": "dist/otk",
   "types": "dist/otk",
