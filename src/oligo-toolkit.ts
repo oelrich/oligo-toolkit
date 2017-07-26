@@ -1,12 +1,12 @@
-import * as transform from "./transform";
-import * as IUPAC from "./iupac";
-import * as stats from "./stats";
-import {TmType} from "./meltingpoint";
+import * as transform from "./components/transform";
+import * as IUPAC from "./components/iupac";
+import * as stats from "./components/stats";
+import {TmType} from "./components/meltingpoint";
 import * as D3 from "d3";
 
 export var DEFAULT_SAMPLE_SIZE = 65536;
 
-export {TmType} from "./meltingpoint"
+export {TmType} from "./components/meltingpoint"
 
 export class otk {
   private _sequence: string;

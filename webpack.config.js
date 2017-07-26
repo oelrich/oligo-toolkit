@@ -5,8 +5,8 @@ var webpack = require('webpack');
 var libraryName = 'oligo-toolkit';
 
 var entry = {};
-entry[libraryName] = __dirname + '/src/components/otk.ts';
-entry[libraryName + '.min'] = __dirname + '/src/components/otk.ts';
+entry[libraryName] = __dirname + '/src/oligo-toolkit.ts';
+entry[libraryName + '.min'] = __dirname + '/src/oligo-toolkit.ts';
 
 var config = {
   entry: entry,

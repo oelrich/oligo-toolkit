@@ -1,6 +1,6 @@
 import { suite, test, timeout, slow } from "mocha-typescript";
 import { assert, expect } from "chai";
-import { otk } from "../components/otk";
+import { otk } from "../oligo-toolkit";
 
 @suite("Oligo Toolkit (Misc.)", slow(1000), timeout(5000))
 class SuiteMisc {

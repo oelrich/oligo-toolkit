@@ -1,7 +1,7 @@
-import * as stats from "./stats";
-import { TmType } from "./meltingpoint";
+import * as stats from "./components/stats";
+import { TmType } from "./components/meltingpoint";
 export declare var DEFAULT_SAMPLE_SIZE: number;
-export { TmType } from "./meltingpoint";
+export { TmType } from "./components/meltingpoint";
 export declare class otk {
     private _sequence;
     private _stats;

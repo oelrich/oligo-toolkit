@@ -1,9 +1,9 @@
 {
   "name": "oligo-toolkit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A toolkit for calculating some basic properties and transformations of oligonucleotides.",
   "main": "dist/oligo-toolkit.js",
-  "typings": "dist/components/otk.d.ts",
+  "typings": "dist/oligo-toolkit.d.ts",
   "scripts": {
     "pretest": "tsc",
     "test": "mocha dist/test/*.js",

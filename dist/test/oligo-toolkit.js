@@ -8,22 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const mocha_typescript_1 = require("mocha-typescript");
 const chai_1 = require("chai");
-const otk_1 = require("../components/otk");
+const oligo_toolkit_1 = require("../oligo-toolkit");
 let SuiteMisc = class SuiteMisc {
     "Domain Size for ATTAC should be 1"() {
-        var o = new otk_1.otk("ATTAC");
+        var o = new oligo_toolkit_1.otk("ATTAC");
         chai_1.expect(o.size()).to.equal(1);
     }
     "Domain Size for NATTAC should be 4"() {
-        var o = new otk_1.otk("NATTAC");
+        var o = new oligo_toolkit_1.otk("NATTAC");
         chai_1.expect(o.size()).to.equal(4);
     }
     "Domain Size for N{8} should be 4^8"() {
-        var o = new otk_1.otk("NNNNNNNN");
+        var o = new oligo_toolkit_1.otk("NNNNNNNN");
         chai_1.expect(o.size()).to.equal(Math.pow(4, 8));
     }
     "Domain Size for N{9} should be 4^9"() {
-        var o = new otk_1.otk("NNNNNNNNN", Math.pow(4, 9));
+        var o = new oligo_toolkit_1.otk("NNNNNNNNN", Math.pow(4, 9));
         console.log("GC");
         console.log(o.stat_gc());
         console.log("Tm");
@@ -31,7 +31,7 @@ let SuiteMisc = class SuiteMisc {
         chai_1.expect(o.size()).to.equal(Math.pow(4, 9));
     }
     "Domain Size for N{32} should be 4^32"() {
-        var o = new otk_1.otk("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN", Math.pow(4, 32));
+        var o = new oligo_toolkit_1.otk("NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN", Math.pow(4, 32));
         chai_1.expect(o.size()).to.equal(Math.pow(4, 32));
     }
 };
@@ -55,18 +55,18 @@ SuiteMisc = __decorate([
 ], SuiteMisc);
 let SuiteGC = class SuiteGC {
     "GC content of ATTAC should be 1/5"() {
-        var o = new otk_1.otk("ATTAC");
+        var o = new oligo_toolkit_1.otk("ATTAC");
         chai_1.expect(o.stat_gc().exact).to.equal(1 / 5);
     }
     "GC content of ATTAN should be max 1/5, min 0 and average 1/10"() {
-        var o = new otk_1.otk("ATTAN");
+        var o = new oligo_toolkit_1.otk("ATTAN");
         chai_1.expect(o.stat_gc().ext.min).to.equal(0);
         chai_1.expect(o.stat_gc().ext.max).to.equal(1 / 5);
         chai_1.expect(o.stat_gc().mean).to.equal(1 / 10);
         chai_1.expect(o.stat_gc().count).to.equal(4);
     }
     "GC content of ATTNN should be max 2/5, min 0 and average 1/5"() {
-        var o = new otk_1.otk("ATTNN");
+        var o = new oligo_toolkit_1.otk("ATTNN");
         chai_1.expect(o.stat_gc().ext.min).to.equal(0);
         chai_1.expect(o.stat_gc().ext.max).to.equal(2 / 5);
         chai_1.expect(o.stat_gc().mean).to.equal(1 / 5);
@@ -87,11 +87,11 @@ SuiteGC = __decorate([
 ], SuiteGC);
 let SuiteTm = class SuiteTm {
     "CATATTAC should be about 20.0 °C"() {
-        var o = new otk_1.otk("CATATTAC");
+        var o = new oligo_toolkit_1.otk("CATATTAC");
         chai_1.expect(o.stat_tm().exact).to.be.approximately(20.0, 0.1);
     }
     "CATATTAN should be about  20.0 °C"() {
-        var o = new otk_1.otk("CATATTAN");
+        var o = new oligo_toolkit_1.otk("CATATTAN");
         chai_1.expect(o.stat_tm().count).to.equal(4);
         chai_1.expect(o.stat_tm().mean).to.equal(19);
         chai_1.expect(o.stat_tm().ext.min).to.equal(18);
@@ -109,11 +109,11 @@ SuiteTm = __decorate([
 ], SuiteTm);
 let SuiteTransforms = class SuiteTransforms {
     "CATATTAC reverse complement should be GTAATATG"() {
-        var o = new otk_1.otk("CATATTAC");
+        var o = new oligo_toolkit_1.otk("CATATTAC");
         chai_1.expect(o.reverse_complement()).to.equal("GTAATATG");
     }
     "CATATTAN reverse complement should be NTAATATG"() {
-        var o = new otk_1.otk("CATATTAN");
+        var o = new oligo_toolkit_1.otk("CATATTAN");
         chai_1.expect(o.reverse_complement()).to.equal("NTAATATG");
     }
 };
@@ -126,4 +126,4 @@ __decorate([
 SuiteTransforms = __decorate([
     mocha_typescript_1.suite("Oligo Toolkit (Transforms)", mocha_typescript_1.slow(1000), mocha_typescript_1.timeout(2000))
 ], SuiteTransforms);
-//# sourceMappingURL=otk.js.map
+//# sourceMappingURL=oligo-toolkit.js.map
