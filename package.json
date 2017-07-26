@@ -1,12 +1,11 @@
 {
   "name": "oligo-toolkit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A toolkit for calculating some basic properties and transformations of oligonucleotides.",
-  "main": "dist/otk",
-  "types": "dist/otk",
+  "main": "dist/oligo-toolkit.js",
+  "typings": "dist/components/otk.d.ts",
   "scripts": {
     "pretest": "tsc",
-    "build": "webpack",
     "test": "mocha dist/test/*.js",
     "watch": "mocha-typescript-watch"
   },
@@ -34,10 +33,12 @@
     "@types/mocha": "^2.2.41",
     "awesome-typescript-loader": "^3.2.1",
     "chai": "^4.0.2",
+    "dts-bundle": "^0.7.3",
     "mocha": "^3.4.2",
     "mocha-typescript": "^1.1.7",
     "source-map-loader": "^0.2.1",
-    "typescript": "^2.4.1"
+    "typescript": "^2.4.1",
+    "webpack": "^3.4.1"
   },
   "dependencies": {
     "@types/d3": "^4.9.0",

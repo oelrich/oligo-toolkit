@@ -1,10 +1,12 @@
 import * as transform from "./transform";
 import * as IUPAC from "./iupac";
 import * as stats from "./stats";
-import * as meltingpoint from "./meltingpoint";
+import {TmType} from "./meltingpoint";
 import * as D3 from "d3";
 
 export var DEFAULT_SAMPLE_SIZE = 65536;
+
+export {TmType} from "./meltingpoint"
 
 export class otk {
   private _sequence: string;
@@ -14,9 +16,9 @@ export class otk {
   private _sample_size: number;
   private _sample_process_time: number;
 
-  private _tm_type:meltingpoint.TmType;
+  private _tm_type:TmType;
 
-  constructor(sequence:string, sample_size:number = DEFAULT_SAMPLE_SIZE, tm_type = meltingpoint.TmType.BASIC) {
+  constructor(sequence:string, sample_size:number = DEFAULT_SAMPLE_SIZE, tm_type = TmType.BASIC) {
     if(!IUPAC.valid(sequence)) {
       throw new Error("OTK: Invalid sequence");
     }

@@ -1,20 +1,30 @@
-module.exports = {
-  entry: "./src/components/otk.ts",
+// https://medium.com/@vladimirtolstikov/how-to-merge-d-ts-typings-with-dts-bundle-and-webpack-e8903d699576
+
+var webpack = require('webpack');
+
+var libraryName = 'oligo-toolkit';
+
+var entry = {};
+entry[libraryName] = __dirname + '/src/components/otk.ts';
+entry[libraryName + '.min'] = __dirname + '/src/components/otk.ts';
+
+var config = {
+  entry: entry,
+  devtool: 'source-map',
   output: {
-    filename: "otk.js",
-    path: __dirname + "/dist"
-  },
-  devtool: "source-map",
+    path: __dirname + '/dist',
+    filename: "[name].js"},
   resolve: {
     extensions: [".ts"]
   },
+  plugins: [],
   module: {
-    rules: [
-      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader"}
+    loaders: [
+      {
+        test: /\.ts/,
+        loader: "awesome-typescript-loader" }
     ]
-  },
-  externals: {
-    "d3": "D3"
   }
 };
+
+module.exports = config;
